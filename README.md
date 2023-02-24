@@ -1,6 +1,6 @@
 # flutter_weather_app
 
-A new Flutter project.
+Flutter Weather app with golocation and fetch data from API created by Open Weather. State Manager GetX
 
 ## Getting Started
 
