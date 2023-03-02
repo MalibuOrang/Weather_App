@@ -4,9 +4,7 @@ class WeatherDataDaily {
   factory WeatherDataDaily.fromJson(Map<String, dynamic> json) =>
       WeatherDataDaily(
         daily: List<Daily>.from(
-          json['daily'].map(
-            (e) => Daily.fromJson(e),
-          ),
+          json['daily'].map((e) => Daily.fromJson(e)),
         ),
       );
 }

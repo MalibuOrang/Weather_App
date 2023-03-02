@@ -1,5 +1,6 @@
 import 'package:flutter_weather_app/api/fetch_weather.dart';
 import 'package:flutter_weather_app/model/weather_data.dart';
+import 'package:flutter_weather_bg_null_safety/flutter_weather_bg.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +11,7 @@ class GlobalController extends GetxController {
   final RxDouble _long = 0.0.obs;
   final RxInt _currentIndex = 0.obs;
   final weatherData = WeatherData().obs;
+
   WeatherData getData() {
     return weatherData.value;
   }
@@ -28,6 +30,41 @@ class GlobalController extends GetxController {
       getIndex();
     }
     super.onInit();
+  }
+
+  WeatherType getAnimation() {
+    String? icon = weatherData.value.current?.current.weather![0].icon;
+    switch (icon) {
+      case "01d":
+        return WeatherType.sunny;
+      case "01n":
+        return WeatherType.sunnyNight;
+      case "03d":
+        return WeatherType.cloudy;
+      case "03n":
+        return WeatherType.cloudyNight;
+      case "04d":
+        return WeatherType.overcast;
+      case "04n":
+        return WeatherType.cloudyNight;
+      case "9d":
+      case "9n":
+        return WeatherType.heavyRainy;
+      case "10d":
+      case "10n":
+        return WeatherType.lightRainy;
+      case "11d":
+      case "11n":
+        return WeatherType.thunder;
+      case "13d":
+      case "13n":
+        return WeatherType.middleSnow;
+      case "50d":
+      case "50n":
+        return WeatherType.hazy;
+      default:
+        return WeatherType.dusty;
+    }
   }
 
   getLocation() async {

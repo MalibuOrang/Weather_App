@@ -4,7 +4,7 @@ import 'package:flutter_weather_app/utils/custom_colors.dart';
 
 class CurrentWeatherWidget extends StatelessWidget {
   final WeatherDataCurrent weatherDataCurrent;
-  CurrentWeatherWidget({super.key, required this.weatherDataCurrent});
+  const CurrentWeatherWidget({super.key, required this.weatherDataCurrent});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,7 +48,7 @@ class CurrentWeatherWidget extends StatelessWidget {
                 style: const TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 14,
-                  color: Colors.grey,
+                  color: CustomColors.textColorBlack,
                 ),
                 spellOut: true,
               ),
@@ -107,6 +107,7 @@ class CurrentWeatherWidget extends StatelessWidget {
             child: Text(
               "${weatherDataCurrent.current.windSpeed} м/с",
               style: const TextStyle(
+                color: CustomColors.textColorBlack,
                 fontSize: 14,
               ),
               textAlign: TextAlign.center,
@@ -118,6 +119,7 @@ class CurrentWeatherWidget extends StatelessWidget {
             child: Text(
               "${weatherDataCurrent.current.clouds} %",
               style: const TextStyle(
+                color: CustomColors.textColorBlack,
                 fontSize: 14,
               ),
               textAlign: TextAlign.center,
@@ -129,6 +131,7 @@ class CurrentWeatherWidget extends StatelessWidget {
             child: Text(
               "${weatherDataCurrent.current.pressure} mbar",
               style: const TextStyle(
+                color: CustomColors.textColorBlack,
                 fontSize: 14,
               ),
               textAlign: TextAlign.center,

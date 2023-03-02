@@ -12,21 +12,7 @@ class HourlyDataWidget extends StatelessWidget {
   RxInt cardIndex = GlobalController().getIndex();
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          child: const Text(
-            "Прогноз на 24 години 🕐",
-            style: TextStyle(
-              fontSize: 15,
-            ),
-          ),
-          margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-          alignment: Alignment.topCenter,
-        ),
-        hourlyList()
-      ],
-    );
+    return Container(child: hourlyList());
   }
 
   Widget hourlyList() {
@@ -48,13 +34,6 @@ class HourlyDataWidget extends StatelessWidget {
                   margin: const EdgeInsets.only(left: 20, right: 5),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      boxShadow: [
-                        BoxShadow(
-                            offset: const Offset(0.5, 0),
-                            blurRadius: 30,
-                            spreadRadius: 1,
-                            color: CustomColors.dividerLine.withAlpha(150))
-                      ],
                       gradient: cardIndex.value == index
                           ? const LinearGradient(colors: [
                               CustomColors.firstGradientColor,

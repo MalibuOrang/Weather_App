@@ -42,10 +42,12 @@ dependencies:
   sleek_circular_slider: ^2.0.1
   get: ^4.6.5
   intl: ^0.18.0
+  flutter_weather_bg_null_safety: ^1.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.12.0
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
