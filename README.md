@@ -4,13 +4,4 @@ Flutter Weather app with golocation and fetch data from API created by Open Weat
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This project is get weather, from Open Weather Map, gets your location and gives you the current weather, hourly and daily. An animated background has been added, depending on the state of the weather. Material style design.
