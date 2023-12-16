@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_weather_app/controllers/global_controller.dart';
+import 'package:flutter_weather_app/utils/custom_colors.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -43,7 +44,11 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           alignment: Alignment.topLeft,
           child: Text(
             city,
-            style: const TextStyle(fontSize: 35, height: 2),
+            style: const TextStyle(
+              fontSize: 35,
+              height: 2,
+              color: CustomColors.textColorBlack,
+            ),
           ),
         ),
         Container(
@@ -53,8 +58,10 @@ class _HeaderWidgetState extends State<HeaderWidget> {
             date,
             style: const TextStyle(
                 fontSize: 14,
-                color: Color.fromARGB(255, 124, 122, 122),
-                height: 1.5),
+                color: CustomColors.textColorBlack,
+                height: 1.5,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.bold),
           ),
         ),
       ],

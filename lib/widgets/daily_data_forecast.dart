@@ -19,11 +19,11 @@ class DailyDataForecast extends StatelessWidget {
   Widget build(BuildContext context) {
     initializeDateFormatting("uk", null);
     return Container(
-      height: 400,
+      height: 350,
       margin: const EdgeInsets.all(20),
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: CustomColors.dividerLine.withAlpha(50),
+        color: CustomColors.dividerLine.withAlpha(100),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -47,7 +47,7 @@ class DailyDataForecast extends StatelessWidget {
         height: 300,
         child: ListView.builder(
           scrollDirection: Axis.vertical,
-          itemCount: weatherDataDaily.daily.length,
+          itemCount: 7,
           itemBuilder: (context, index) {
             return Column(
               children: [
@@ -60,7 +60,7 @@ class DailyDataForecast extends StatelessWidget {
                       SizedBox(
                         width: 80,
                         child: Text(
-                          getDayofWeek(weatherDataDaily.daily[index].dt),
+                          getDayofWeek(weatherDataDaily.daily[index + 1].dt),
                           style: const TextStyle(
                               color: CustomColors.textColorBlack, fontSize: 16),
                         ),
@@ -69,11 +69,12 @@ class DailyDataForecast extends StatelessWidget {
                         height: 30,
                         width: 30,
                         child: Image.asset(
-                            "assets/weather/${weatherDataDaily.daily[index].weather![0].icon}.png"),
+                            "assets/weather/${weatherDataDaily.daily[index + 1].weather![0].icon}.png"),
                       ),
                       Text(
-                        "${weatherDataDaily.daily[index].temp?.day}° / ${weatherDataDaily.daily[index].temp?.night}° 🌡️",
+                        "${weatherDataDaily.daily[index + 1].temp?.day}° / ${weatherDataDaily.daily[index + 1].temp?.night}° 🌡️",
                         style: const TextStyle(
+                          color: CustomColors.textColorBlack,
                           fontSize: 16,
                         ),
                       ),
